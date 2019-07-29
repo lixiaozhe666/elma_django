@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url,include
 import xadmin
+from django.views.static import serve
+from . import settings
 
 
 
 urlpatterns = [
     url('admin/', xadmin.site.urls),
     url('hello/', include(('apps.detail.urls'),namespace='detail')),
-    url('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^media/(?P<path>.*)', serve, {"document_root":settings.MEDIA_ROOT}),
 ]

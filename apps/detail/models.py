@@ -28,7 +28,7 @@ class SellerModel(models.Model):
     ratingCount= models.IntegerField(verbose_name='评论数',null=True,blank=True)
     sellCount= models.IntegerField(verbose_name='成交量',null=True,blank=True)
     bulletin = models.TextField(verbose_name='公告',null=True,blank=True)
-    avatar = models.ImageField(verbose_name='头像',upload_to='avatar/%Y/%m/',null=True,blank=True)
+    avatar = models.ImageField(verbose_name='头像',upload_to='media/avatar/%Y/%m/',null=True,blank=True)
     pics = models.TextField(verbose_name='商家图片',null=True,blank=True)
     infos = models.TextField(verbose_name='商家营业信息',null=True,blank=True)
     supports = models.TextField(verbose_name='商家优惠信息',null=True,blank=True)
